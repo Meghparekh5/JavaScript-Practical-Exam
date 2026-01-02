@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Task Manager</title>
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="./Asset/Css/Style.css">
+    </head>
+
+    <body>
+        <h1>Task Mangement System</h1>
+        <div class="container">
+
+            <div class="form-box">
+                <h3>Add New Task</h3>
+                <input type="text" id="title" placeholder="Task Name" />
+
+                <select id="category" required>
+                    <option value="deafult" disabled selected>Select
+                        category</option>
+                    <option value="work">Work</option>
+                    <option value="Health">Health</option>
+                    <option value="Habit">Habit</option>
+                </select>
+                <input type="date" id="dueDate" />
+                <button onclick="addTask()">Add Task</button>
+            </div>
+
+            <div class="search-filter">
+                <input type="text" id="search" placeholder="Search by its Name"
+                    onkeyup="renderTasks()" />
+                <select id="filter" onchange="renderTasks()">
+                    <option value="all">All</option>
+                    <option value="pending">Pending</option>
+                    <option value="completed">Completed</option>
+                    <option value="overdue">Overdue</option>
+                </select>
+            </div>
+
+            <div class="task-list" id="taskList"></div>
+
+            <div class="dashboard" id="dashboard"></div>
+        </div>
+
+        <script src="./Asset/Js/bootstrap.bundle.min.js"></script>
+        <script src="./Asset/Js/script.js"></script>
+    </body>
+
+</html>
